@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Item.module.scss'
+import styles from './CarsItem.module.scss'
 import MyButton from "../UI/button/MyButton.jsx";
 
-const Item = ({car}) => {
+const CarsItem = ({car}) => {
 	return (
 		<div>
 			<div className={styles.item}>
@@ -20,4 +20,4 @@ const Item = ({car}) => {
 	);
 };
 
-export default Item;
+export default CarsItem;

@@ -1,15 +1,18 @@
 import './assets/styles/global.scss'
-import CartItem from "./components/CartItem/CartItem.jsx";
-import {useEffect} from "react";
-import MyModal from "./components/UI/modal/MyModal.jsx";
-import Navigation from "./components/Navigation/Navigation.jsx";
+
+import NavBar from "./components/Navbar/NavBar.jsx";
+import HomePage from "./pages/Home/HomePage.jsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React from "react";
 
 function App() {
 	return (
-		<div className="App">
-			<Navigation/>
-			<CartItem/>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route element={<HomePage/>} path={'/'} />
+				<Route element={<div>Page not found!</div>} path={'*'} />
+			</Routes>
+		</BrowserRouter>
 	)
 }
 
