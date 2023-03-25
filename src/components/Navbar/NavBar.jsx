@@ -10,7 +10,7 @@ const NavBar = ({setCars}) => {
 			<div><button onClick={() => setOpen(true)}>AddCar</button></div>
 			{open && <MyModal>
 				<ItemForm setCars={setCars}/>
-			</MyModal>}
+			</MyModal >}
 		</div>
 	);
 };
