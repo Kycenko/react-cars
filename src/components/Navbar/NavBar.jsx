@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './NavBar.module.scss'
-const NavBar = () => {
+import MyModal from "../UI/modal/MyModal.jsx";
+import ItemForm from "../ItemForm/ItemForm.jsx";
+const NavBar = ({setCars}) => {
+	const [open, setOpen] = useState(false)
 	return (
 		<div className={styles.main}>
 			<div><a href="">Home</a></div>
-			<div><a href="">AddCar</a></div>
+			<div><button onClick={() => setOpen(true)}>AddCar</button></div>
+			{open && <MyModal>
+				<ItemForm setCars={setCars}/>
+			</MyModal>}
 		</div>
 	);
 };

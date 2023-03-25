@@ -15,6 +15,7 @@ const ItemForm = ({setCars}) => {
 	
 	return (
 		<form>
+			<h1>Create new car</h1>
 			<input value={data.title} onChange={(e) => setData(prev => ({...prev, title: e.target.value}))} type="text"
 			       placeholder='Name...'/>
 			<input value={data.price} onChange={(e) => setData(prev => ({...prev, price: e.target.value}))} type="text"

@@ -7,7 +7,7 @@ form {
 
   input {
     outline: none;
-    border: none;
+    border: 1px solid grey;
     border-radius: 10px;
     margin: 5px;
     padding: 10px;
@@ -19,4 +19,7 @@ form {
     cursor: pointer;
     border-radius: 10px;
   }
+}
+h1 {
+  color: black;
 }

@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './CarsItem.module.scss'
+import styles from './CarItem.module.scss'
 import MyButton from "../UI/button/MyButton.jsx";
+import {Link} from "react-router-dom";
 
-const CarsItem = ({car}) => {
+const CarItem = ({car}) => {
 	return (
 		<div>
 			<div className={styles.item}>
@@ -12,7 +13,7 @@ const CarsItem = ({car}) => {
 			<div className={styles.info}>
 				<h2>{car.title}</h2>
 				<p>{car.price}$</p>
-				<MyButton>Read more</MyButton>
+			<Link className={styles.myLink} to={`/car/${car.id}`}>Read more</Link>
 			</div>
 		</div>
 		
@@ -20,4 +21,4 @@ const CarsItem = ({car}) => {
 	);
 };
 
-export default CarsItem;
+export default CarItem;
