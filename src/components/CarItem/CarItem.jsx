@@ -7,8 +7,9 @@ const CarItem = ({car}) => {
 	return (
 		<div>
 			<div className={styles.item}>
-				<div className={styles.image}
-				     style={{backgroundImage: `url(${car.image})`}}></div>
+				<div className={styles.image}>
+					{<img className={styles.image} src={`${car.image}`} alt=""/>}
+				</div>
 			</div>
 			<div className={styles.info}>
 				<h2>{car.title}</h2>

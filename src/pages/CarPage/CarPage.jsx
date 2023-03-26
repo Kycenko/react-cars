@@ -9,7 +9,7 @@ import CarItem from "../../components/CarItem/CarItem.jsx";
 const CarPage = () => {
 	const {id} = useParams()
 	const [car, setCar] = useState({})
-	
+
 	useEffect(() => {
 		if (!id) return
 		const fetchData = async () => {
@@ -18,21 +18,20 @@ const CarPage = () => {
 		}
 		fetchData()
 	}, [id])
-	
+
 	if (!car?.title) return <div className={styles.loader}><Loader/></div>
 	return (
 		<div>
 			<NavBar/>
-			<div className={styles.main}>
-				<div className={styles.car_title}>{car.title}</div>
-				<div className={styles.car_content}>
-					<div className={styles.car_content_left}>
-						<div>{<img src={`${car.image}`} alt=""/>}</div>
-					</div>
+			<div>	<h2>{car.title}</h2></div>
+			<div className={styles.item}>
+				<div className={styles.image}>
+					{<img className={styles.image} src={`${car.image}`} alt=""/>}
 				</div>
 			</div>
-			<Link to='/'>Back</Link>
-		
+			<div className={styles.info}>
+				<p>{car.price}$</p>
+			</div>
 		</div>
 	);
 };
