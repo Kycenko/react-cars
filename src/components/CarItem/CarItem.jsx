@@ -13,7 +13,7 @@ const CarItem = ({car}) => {
 			</div>
 			<div className={styles.info}>
 				<h2>{car.title}</h2>
-				<p>{car.price}$</p>
+				<p>{new Intl.NumberFormat('ru-RU', {style: 'currency', currency: 'USD', }).format(car.price)}</p>
 			<Link className={styles.myLink} to={`/car/${car.id}`}>Read more</Link>
 			</div>
 		</div>

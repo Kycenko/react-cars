@@ -8,6 +8,7 @@ import MyModal from "../../components/UI/modal/MyModal.jsx";
 import ItemForm from "../../components/ItemForm/ItemForm.jsx";
 
 
+
 const HomePage = () => {
   const [cars, setCars] = useState([])
   const [isCarsLoading, setIsCarsLoading] = useState(false)
@@ -36,15 +37,16 @@ const HomePage = () => {
   return (
     <div>
       <MyModal visible={modal} setVisible={setModal}><ItemForm create={createNewCar}/></MyModal>
-      <NavBar>
-        <div><input value={searchQuery} onChange={e => setSearchQuery(e.target.value)} type="text"
-                    placeholder='Search...'/></div>
-        <div>
-          <button onClick={() => setModal(true)}>AddCar</button>
-        </div>
-      </NavBar>
-      <h1>Cars catalog</h1>
-      {isCarsLoading ? <div className={styles.loader}><Loader/></div> : <CarsList cars={searchCars} key={cars.id}/>}
+     <NavBar>
+       <div><input value={searchQuery} onChange={e => setSearchQuery(e.target.value)} type="text"
+                   placeholder='Search...'/></div>
+       <div>
+         <button onClick={() => setModal(true)}>AddCar</button>
+       </div>
+     </NavBar>
+      {isCarsLoading ? <div className={styles.loader}><Loader/></div> :
+        <CarsList cars={searchCars} key={cars.id}/> && searchCars.length ? <CarsList cars={searchCars} key={cars.id}/> :
+          <div>Cars not found!</div>}
     </div>
   );
 };
