@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CarItem.module.scss'
-import MyButton from "../UI/button/MyButton.jsx";
+
 import {Link} from "react-router-dom";
 
 const CarItem = ({car}) => {
