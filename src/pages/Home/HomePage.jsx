@@ -2,10 +2,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import styles from "./HomePage.module.scss";
 import CarsList from "../../components/CarsList/CarsList.jsx";
 import Loader from "../../components/UI/loader/Loader.jsx";
-import NavBar from "../../components/Navbar/NavBar.jsx";
-import MyModal from "../../components/UI/modal/MyModal.jsx";
-import CreateCarForm from "../../components/CreateCarForm/CreateCarForm.jsx";
 import { CarService } from "../../services/car.service.js";
+import NavBar from "../../components/Navbar/NavBar.jsx";
 
 const HomePage = () => {
   const [cars, setCars] = useState([]);
@@ -35,34 +33,37 @@ const HomePage = () => {
   };
 
   return (
-    <div>
-      <MyModal visible={modal} setVisible={setModal}>
-        <CreateCarForm create={createNewCar} />
-      </MyModal>
+    <>
       <NavBar />
-      {/*<div>*/}
-      {/*  <input*/}
-      {/*    value={searchQuery}*/}
-      {/*    onChange={(e) => setSearchQuery(e.target.value)}*/}
-      {/*    type="text"*/}
-      {/*    placeholder="Search..."*/}
-      {/*  />*/}
-      {/*</div>*/}
-      {/*<div>*/}
-      {/*  <button onClick={() => setModal(true)}>AddCar</button>*/}
-      {/*  <FavouriteBlock />*/}
-      {/*</div>*/}
-
-      {isCarsLoading ? (
-        <div className={styles.loader}>
-          <Loader />
+      <div className={styles.container}>
+        <div>
+          <input
+            className={styles.searchInput}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            type="text"
+            placeholder="Search..."
+          />
         </div>
-      ) : <CarsList cars={searchCars} key={cars.id} /> && searchCars.length ? (
-        <CarsList cars={searchCars} key={cars.id} />
-      ) : (
-        <div>Cars not found!</div>
-      )}
-    </div>
+        {/*<MyModal visible={modal} setVisible={setModal}>*/}
+        {/*  <CreateCarForm create={createNewCar} />*/}
+        {/*</MyModal>*/}
+        {/*<div>*/}
+        {/*  <button onClick={() => setModal(true)}>AddCar</button>*/}
+        {/*</div>*/}
+
+        {isCarsLoading ? (
+          <div className={styles.loader}>
+            <Loader />
+          </div>
+        ) : <CarsList cars={searchCars} key={cars.id} /> &&
+          searchCars.length ? (
+          <CarsList cars={searchCars} key={cars.id} />
+        ) : (
+          <div>Cars not found!</div>
+        )}
+      </div>
+    </>
   );
 };
 

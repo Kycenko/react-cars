@@ -13,25 +13,22 @@ const CarItem = ({ car }) => {
     navigate(`/car/${car.id}`);
   };
   return (
-    <div>
-      <div className={styles.item}>
-        <div className={styles.image}>
-          {<img className={styles.image} src={`${car.image}`} alt="" />}
-        </div>
-      </div>
-      <div className={styles.info}>
-        <h2>{car.title}</h2>
-        <p>
+    <div className={styles.product_item}>
+      {<img src={`${car.image}`} alt="" />}
+      <div className={styles.product_list}>
+        <h3>{car.title}</h3>
+        <span className={styles.price}>
           {new Intl.NumberFormat("ru-RU", {
             style: "currency",
             currency: "USD",
           }).format(car.price)}
-        </p>
-        {/*<Link className={styles.myLink} to={`/car/${car.id}`}>Read more</Link>*/}
-        <button className={styles.myLink} onClick={moveToCarItem}>
-          Read more
-        </button>
-        <FavouriteCar car={car} />
+        </span>
+        <div className={styles.buttons}>
+          <button className={styles.button} onClick={moveToCarItem}>
+            Read more
+          </button>
+          <FavouriteCar car={car} />
+        </div>
       </div>
     </div>
   );

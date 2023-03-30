@@ -1,12 +1,21 @@
-h1 {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  color: white;
-}
-
 .loader {
   display: flex;
   justify-content: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput {
+  width: 500px;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 50px;
+  border: none;
+  outline: none;
+  border-radius: 15px
+}

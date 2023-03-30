@@ -21,7 +21,7 @@ const FavouriteCar = ({ car }) => {
   };
   return (
     <div>
-      <button className={styles.fav} onClick={handleClick}>
+      <button className={styles.button} onClick={handleClick}>
         {isCarInFavourite ? "UnLike" : "Like"}
       </button>
     </div>

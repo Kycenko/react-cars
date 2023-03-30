@@ -1,9 +1,15 @@
-.fav {
-  color: black;
+.button {
   text-decoration: none;
-  background-color: white;
-  padding: 10px;
-  border: 1px solid white;
+  padding: 0 12px;
+  background: #cccccc;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 28px;
+  transition: .3s ease-in;
+}
+
+.button:hover {
+  background: #fc5a5a;
   cursor: pointer;
-  border-radius: 10px;
 }
