@@ -2,27 +2,39 @@
 	"cars": [
 		{
 			"image": "https://wallpaperaccess.com/full/13643.jpg",
-			"title": "Nike Air Max SC",
+			"title": "BMW",
 			"price": 12999,
 			"id": 1
 		},
 		{
 			"image": "https://www.supercars.net/blog/wp-content/uploads/2020/09/wallpaperflare.com_wallpaper-1-1.jpg",
-			"title": "Nike Air Max 270",
+			"title": "Audi",
 			"price": 15600,
 			"id": 2
 		},
 		{
 			"image": "https://4kwallpapers.com/images/wallpapers/mclaren-artura-trophy-race-cars-dark-background-2022-5k-8k-3840x2160-8444.jpg",
-			"title": "Nike Air Force 1",
+			"title": "Ford",
 			"price": 13999,
 			"id": 3
 		},
 		{
 			"image": "https://wallpapers.com/images/featured/tchphr7vwuc9w59w.jpg",
-			"title": "Nike Air Force 1",
+			"title": "Volkswagen",
 			"price": 13999,
 			"id": 4
+		},
+		{
+			"image": "https://wallpapers.com/images/featured/tchphr7vwuc9w59w.jpg",
+			"title": "BMW",
+			"price": 13999,
+			"id": 5
+		},
+		{
+			"image": "https://wallpapers.com/images/featured/tchphr7vwuc9w59w.jpg",
+			"title": "BMW",
+			"price": 13999,
+			"id": 6
 		}
 	]
 }

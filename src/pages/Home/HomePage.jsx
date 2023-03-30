@@ -36,21 +36,13 @@ const HomePage = () => {
     <>
       <NavBar />
       <div className={styles.container}>
-        <div>
-          <input
-            className={styles.searchInput}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            type="text"
-            placeholder="Search..."
-          />
-        </div>
-        {/*<MyModal visible={modal} setVisible={setModal}>*/}
-        {/*  <CreateCarForm create={createNewCar} />*/}
-        {/*</MyModal>*/}
-        {/*<div>*/}
-        {/*  <button onClick={() => setModal(true)}>AddCar</button>*/}
-        {/*</div>*/}
+        <input
+          className={styles.searchInput}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          type="text"
+          placeholder="Search..."
+        />
 
         {isCarsLoading ? (
           <div className={styles.loader}>
@@ -60,9 +52,15 @@ const HomePage = () => {
           searchCars.length ? (
           <CarsList cars={searchCars} key={cars.id} />
         ) : (
-          <div>Cars not found!</div>
+          <div className={styles.notFound}>Cars not found!</div>
         )}
       </div>
+      {/*<MyModal visible={modal} setVisible={setModal}>*/}
+      {/*  <CreateCarForm create={createNewCar} />*/}
+      {/*</MyModal>*/}
+      {/*<div>*/}
+      {/*  <button onClick={() => setModal(true)}>AddCar</button>*/}
+      {/*</div>*/}
     </>
   );
 };

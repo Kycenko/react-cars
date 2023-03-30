@@ -4,7 +4,10 @@
   box-sizing: border-box;
   font-family: "JetBrains Mono ExtraBold", serif;
 }
+
 body {
-  background-color: #111;
+  min-width: 450px;
+  max-width: 100%;
+  background-color: white;
   color: #fff;
 }

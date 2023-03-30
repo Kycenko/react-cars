@@ -1,18 +1,11 @@
-
-.product_item:not(:last-child) {
-  margin-bottom: 50px;
-}
-
 .product_item {
-  display: flex;
-  flex-direction: column;
-  width: 1200px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+  position: relative;
+  width: 400px;
   text-align: center;
-  margin: 0 auto;
-  border-bottom: 2px solid #F5F5F5;
   background: white;
-  font-family: "Open Sans", serif;
   transition: .3s ease-in;
+  margin: 10px;
 }
 
 
@@ -22,6 +15,7 @@
 }
 
 .product_list {
+
   background: #fafafa;
   padding: 15px 0;
 }
@@ -35,16 +29,18 @@
 
 .price {
   font-size: 16px;
-  color: #fc5a5a;
+  color: #444444;
   display: block;
   margin-bottom: 12px;
 }
 
 .button {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
   margin-right: 10px;
   text-decoration: none;
   display: inline-block;
   padding: 0 12px;
+  border: 1px solid gray;
   background: #cccccc;
   color: white;
   text-transform: uppercase;
@@ -54,7 +50,7 @@
 }
 
 .product_item .button:hover {
-  background: #fc5a5a;
+  background: gray;
   cursor: pointer;
 }
 
