@@ -4,6 +4,7 @@ import {
   deleteCarInFavourite,
   setCarInFavourite,
 } from "../../store/favouriteSlice.js";
+import styles from "./FavouriteCar.module.scss";
 
 const FavouriteCar = ({ car }) => {
   const dispatch = useDispatch();
@@ -20,11 +21,9 @@ const FavouriteCar = ({ car }) => {
   };
   return (
     <div>
-      <div>
-        <button onClick={handleClick}>
-          {isCarInFavourite ? "UnLike" : "Like"}
-        </button>
-      </div>
+      <button className={styles.fav} onClick={handleClick}>
+        {isCarInFavourite ? "UnLike" : "Like"}
+      </button>
     </div>
   );
 };

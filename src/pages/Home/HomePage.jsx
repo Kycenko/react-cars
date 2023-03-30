@@ -39,19 +39,20 @@ const HomePage = () => {
       <MyModal visible={modal} setVisible={setModal}>
         <CreateCarForm create={createNewCar} />
       </MyModal>
-      <NavBar>
-        <div>
-          <input
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            type="text"
-            placeholder="Search..."
-          />
-        </div>
-        <div>
-          <button onClick={() => setModal(true)}>AddCar</button>
-        </div>
-      </NavBar>
+      <NavBar />
+      {/*<div>*/}
+      {/*  <input*/}
+      {/*    value={searchQuery}*/}
+      {/*    onChange={(e) => setSearchQuery(e.target.value)}*/}
+      {/*    type="text"*/}
+      {/*    placeholder="Search..."*/}
+      {/*  />*/}
+      {/*</div>*/}
+      {/*<div>*/}
+      {/*  <button onClick={() => setModal(true)}>AddCar</button>*/}
+      {/*  <FavouriteBlock />*/}
+      {/*</div>*/}
+
       {isCarsLoading ? (
         <div className={styles.loader}>
           <Loader />

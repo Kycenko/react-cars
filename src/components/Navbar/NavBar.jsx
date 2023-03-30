@@ -1,17 +1,28 @@
-import React, {useMemo, useState} from 'react';
-import styles from './NavBar.module.scss'
+import React from "react";
+import FavouriteBlock from "../FavouriteBlock/FavouriteBlock.jsx";
+import styles from "./NavBar.module.scss";
+import { Link } from "react-router-dom";
 
-const NavBar = ({children}) => {
+const NavBar = (/*{ children }*/) => {
   return (
- <div>{children}</div>
-    // <div className={styles.topnav}>
-    //   <a className={styles.active} href="#home">Home</a>
-    //
-    //   <a href="#about">About</a>
-    //   <a href="#contact">Contact</a>
-    //   <input type="text" placeholder="Search.."/>
-    // </div>
+    <div className={styles.navBar}>
+      <div className={styles.wrapper}>
+        <Link to="/">
+          {" "}
+          <img
+            className={styles.logo}
+            src="/img/auto-shop-1-logo-svg-vector.svg"
+            alt=""
+          />
+        </Link>
+      </div>
 
+      <div className={styles.favourite_wrapper}>
+        <FavouriteBlock />
+      </div>
+
+      {/*{children}*/}
+    </div>
   );
 };
 

@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentCar } from "../../store/carsSlice.js";
 import FavouriteCar from "../FavouriteCar/FavouriteCar.jsx";
-import FavouriteBlock from "../FavouriteBlock/FavouriteBlock.jsx";
 
 const CarItem = ({ car }) => {
   const dispatch = useDispatch();
@@ -33,7 +32,6 @@ const CarItem = ({ car }) => {
           Read more
         </button>
         <FavouriteCar car={car} />
-        <FavouriteBlock />
       </div>
     </div>
   );
