@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { CarService } from "/src/services/car.service";
 import styles from "./HomePage.module.scss";
 import CarsList from "../../components/CarsList/CarsList.jsx";
 import Loader from "../../components/UI/loader/Loader.jsx";
 import NavBar from "../../components/Navbar/NavBar.jsx";
 import MyModal from "../../components/UI/modal/MyModal.jsx";
 import CreateCarForm from "../../components/CreateCarForm/CreateCarForm.jsx";
+import { CarService } from "../../services/car.service.js";
 
 const HomePage = () => {
   const [cars, setCars] = useState([]);
