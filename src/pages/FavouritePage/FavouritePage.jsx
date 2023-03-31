@@ -7,6 +7,7 @@ const FavouritePage = () => {
   return (
     <div>
       <NavBar />
+
       {cars.map((car) => (
         <div key={car.id}>{car.title}</div>
       ))}

@@ -21,7 +21,6 @@ const FavouriteBlock = () => {
         className={styles.favourite_icon}
         alt=""
       />
-      {/*<GrFavorite size={25} color="white" className={styles.favourite_icon} />*/}
     </div>
   );
 };

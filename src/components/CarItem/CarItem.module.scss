@@ -12,6 +12,7 @@
 .product_item img {
   display: block;
   width: 100%;
+  cursor: pointer;
 }
 
 .product_list {
@@ -25,6 +26,7 @@
   font-weight: 400;
   color: #444444;
   margin: 0 0 10px 0;
+
 }
 
 .price {
@@ -34,27 +36,37 @@
   margin-bottom: 12px;
 }
 
-.button {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
-  margin-right: 10px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 12px;
-  border: 1px solid gray;
-  background: #cccccc;
-  color: white;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 28px;
-  transition: .3s ease-in;
-}
 
 .product_item .button:hover {
-  background: gray;
+
   cursor: pointer;
+}
+
+.button {
+  border: none;
+  margin-right: 70px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+
+  background: transparent;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  margin-bottom: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+}
+
+.row {
+
+ 
 }

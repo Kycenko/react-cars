@@ -36,13 +36,15 @@ const HomePage = () => {
     <>
       <NavBar />
       <div className={styles.container}>
-        <input
-          className={styles.searchInput}
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          type="text"
-          placeholder="Search..."
-        />
+        <div>
+          <input
+            className={styles.searchInput}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            type="text"
+            placeholder="Search..."
+          />
+        </div>
 
         {isCarsLoading ? (
           <div className={styles.loader}>

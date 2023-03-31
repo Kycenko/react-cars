@@ -2,6 +2,7 @@ import React from "react";
 import FavouriteBlock from "../FavouriteBlock/FavouriteBlock.jsx";
 import styles from "./NavBar.module.scss";
 import { Link } from "react-router-dom";
+import CartBlock from "../CartBlock/CartBlock.jsx";
 
 const NavBar = () => {
   return (
@@ -17,6 +18,9 @@ const NavBar = () => {
       </div>
       <div className={styles.favourite_wrapper}>
         <FavouriteBlock />
+      </div>
+      <div className={styles.cart_wrapper}>
+        <CartBlock />
       </div>
     </div>
   );

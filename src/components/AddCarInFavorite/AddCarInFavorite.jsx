@@ -4,9 +4,9 @@ import {
   deleteCarInFavourite,
   setCarInFavourite,
 } from "../../store/favouriteSlice.js";
-import styles from "./FavouriteCar.module.scss";
+import styles from "./AddCarInFavorite.module.scss";
 
-const FavouriteCar = ({ car }) => {
+const AddCarInFavorite = ({ car }) => {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.favourite.carsInFavourite);
   const isCarInFavourite = cars.some((item) => item.id === car.id);
@@ -20,12 +20,24 @@ const FavouriteCar = ({ car }) => {
     }
   };
   return (
-    <div>
-      <button className={styles.button} onClick={handleClick}>
-        {isCarInFavourite ? "UnLike" : "Like"}
-      </button>
+    <div className={styles.buttons}>
+      {isCarInFavourite ? (
+        <img
+          className={styles.icon}
+          onClick={handleClick}
+          src="/public/img/remove-from-favorites-icon.svg"
+          alt=""
+        />
+      ) : (
+        <img
+          className={styles.icon}
+          onClick={handleClick}
+          src="/public/img/add-to-favorites-icon.svg"
+          alt=""
+        />
+      )}
     </div>
   );
 };
 
-export default FavouriteCar;
+export default AddCarInFavorite;

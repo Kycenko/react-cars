@@ -1,9 +1,12 @@
-import {configureStore} from "@reduxjs/toolkit";
-import carsReducer from "./carsSlice.js"
-import favouriteSlice from "./favouriteSlice.js";
+import { configureStore } from "@reduxjs/toolkit";
+import carsReducer from "./carsSlice.js";
+import favouriteReducer from "./favouriteSlice.js";
+import cartReducer from "./cartSlice.js";
+
 export const store = configureStore({
-	reducer: {
-		cars: carsReducer,
-		favourite: favouriteSlice
-	}
-})
+  reducer: {
+    cars: carsReducer,
+    favourite: favouriteReducer,
+    cart: cartReducer,
+  },
+});
