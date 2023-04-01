@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCarInCart, setCarInCart } from "../../store/cartSlice.js";
-import styles from "../AddCarInFavorite/AddCarInFavorite.module.scss";
+import styles from "./AddCarInCart.module.scss";
 
 const AddCarInCart = ({ car }) => {
   const dispatch = useDispatch();
@@ -23,14 +23,14 @@ const AddCarInCart = ({ car }) => {
         <img
           className={styles.icon}
           onClick={handleClick}
-          src="/public/img/remove-from-favorites-icon.svg"
+          src="/public/img/remove-from-cart-icon.svg"
           alt=""
         />
       ) : (
         <img
           className={styles.icon}
           onClick={handleClick}
-          src="/public/img/add-to-favorites-icon.svg"
+          src="/public/img/add-to-cart-icon.svg"
           alt=""
         />
       )}

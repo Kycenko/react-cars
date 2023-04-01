@@ -3,8 +3,8 @@ import styles from "./CarItem.module.scss";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentCar } from "../../store/carsSlice.js";
-import AddCarInFavorite from "../AddCarInFavorite/AddCarInFavorite.jsx";
 import AddCarInCart from "../AddCarInCart/AddCarInCart.jsx";
+import AddCarInFavorite from "../AddCarInFavorite/AddCarInFavorite.jsx";
 
 const CarItem = ({ car }) => {
   const dispatch = useDispatch();
@@ -26,6 +26,7 @@ const CarItem = ({ car }) => {
         </span>
         <div className={styles.row}></div>
         <div className={styles.buttons}>
+          <AddCarInFavorite car={car} />
           <button className={styles.button} onClick={moveToCarItem}>
             <img
               className={styles.icon}
@@ -33,7 +34,6 @@ const CarItem = ({ car }) => {
               alt=""
             />
           </button>
-          <AddCarInFavorite car={car} />
           <AddCarInCart car={car} />
         </div>
       </div>

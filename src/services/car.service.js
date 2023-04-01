@@ -1,8 +1,10 @@
 import axios from "axios";
 
 export const CarService = {
-  async getAll() {
-    const response = await axios.get("http://localhost:4200/cars");
+  async getAll(currentPage) {
+    const response = await axios.get(
+      `http://localhost:4200/cars?_page=${currentPage}&_limit=6`
+    );
     return response.data;
   },
   async getById(id) {

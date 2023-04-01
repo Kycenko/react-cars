@@ -4,6 +4,10 @@ import CarsList from "../../components/CarsList/CarsList.jsx";
 import Loader from "../../components/UI/loader/Loader.jsx";
 import { CarService } from "../../services/car.service.js";
 import NavBar from "../../components/Navbar/NavBar.jsx";
+import { BsSearch } from "react-icons/bs";
+import Pagination from "../../components/Pagination/Pagination.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentPage } from "../../store/filterSlice.js";
 
 const HomePage = () => {
   const [cars, setCars] = useState([]);
@@ -11,15 +15,19 @@ const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [modal, setModal] = useState(false);
 
+  const { currentPage } = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchData = async () => {
       setIsCarsLoading(true);
-      const data = await CarService.getAll();
+      const data = await CarService.getAll(currentPage);
       setCars(data);
       setIsCarsLoading(false);
     };
+    window.scroll(0, 0);
     fetchData();
-  }, []);
+  }, [currentPage]);
 
   const searchCars = useMemo(() => {
     return cars.filter((car) =>
@@ -31,14 +39,17 @@ const HomePage = () => {
     setCars([...cars, newCar]);
     setModal(false);
   };
-
+  const onChangePage = (number) => {
+    dispatch(setCurrentPage(number));
+  };
   return (
     <>
       <NavBar />
       <div className={styles.container}>
-        <div>
+        <div className={styles.input_wrapper}>
+          <BsSearch size={22} className={styles.search_icon} />
           <input
-            className={styles.searchInput}
+            className={styles.search_input}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             type="text"
@@ -56,6 +67,7 @@ const HomePage = () => {
         ) : (
           <div className={styles.notFound}>Cars not found!</div>
         )}
+        <Pagination currentPage={currentPage} onChangePage={onChangePage} />
       </div>
       {/*<MyModal visible={modal} setVisible={setModal}>*/}
       {/*  <CreateCarForm create={createNewCar} />*/}
