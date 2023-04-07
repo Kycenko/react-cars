@@ -1,12 +1,12 @@
-import "./assets/styles/global.scss";
-import HomePage from "./pages/Home/HomePage.jsx";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
-import CarPage from "./pages/CarPage/CarPage.jsx";
 import { Provider } from "react-redux";
-import { store } from "./store/index.js";
-import FavouritePage from "./pages/FavouritePage/FavouritePage.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./assets/styles/global.scss";
+import CarPage from "./pages/CarPage/CarPage.jsx";
 import CartPage from "./pages/CartPage/CartPage.jsx";
+import FavouritePage from "./pages/FavouritePage/FavouritePage.jsx";
+import HomePage from "./pages/Home/HomePage.jsx";
+import { store } from "./store/index.js";
 
 function App() {
   return (
