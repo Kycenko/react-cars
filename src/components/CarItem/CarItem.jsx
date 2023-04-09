@@ -16,6 +16,7 @@ const CarItem = ({ car }) => {
 	return (
 		<div className={styles.product_item}>
 			{<img onClick={moveToCarItem} src={`${car.image}`} alt="" />}
+
 			<div className={styles.product_list}>
 				<h3>{car.title}</h3>
 

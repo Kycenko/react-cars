@@ -16,6 +16,7 @@
   height: 100%;
   position: relative;
 }
+
 .slideContainer {
   width: 700px;
   height: 400px;
@@ -28,6 +29,7 @@
     height: 400px;
   }
 }
+
 .leftArrow {
   position: absolute;
   top: 50%;
@@ -39,6 +41,7 @@
   cursor: pointer;
 
 }
+
 .rightArrow {
   position: absolute;
   top: 50%;
@@ -49,10 +52,17 @@
   z-index: 1;
   cursor: pointer
 }
+
 .dotsContainer {
   display: flex;
-  color: black;
+  width: 0;
+  margin: 0 auto;
   justify-content: center;
-  font-size: 30px;
-  cursor: pointer;
+
+  .dots {
+    cursor: pointer;
+    color: black;
+    font-size: 30px;
+  }
 }
+
