@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../../components/Navbar/NavBar.jsx'
+import Navigation from '../../components/Navigation/Navigation.jsx'
 import styles from './CarPage.module.scss'
 import { useParams } from 'react-router-dom'
-import Loader from '../../UI/loader/Loader.jsx'
+import Spinner from '../../UI/Spinner/Spinner.jsx'
 import { CarService } from '../../services/car.service.js'
 
 const CarPage = () => {
@@ -37,12 +37,12 @@ const CarPage = () => {
 	if (!car?.title)
 		return (
 			<div className={styles.loader}>
-				<Loader />
+				<Spinner />
 			</div>
 		)
 	return (
 		<>
-			<NavBar />
+			<Navigation />
 
 			<div className={styles.slideContainer}>
 				<div className={styles.sliderStyle}>

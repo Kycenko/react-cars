@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import styles from './HomePage.module.scss'
-import Loader from '../../UI/loader/Loader'
+import Spinner from '../../UI/Spinner/Spinner.jsx'
 import { CarService } from '../../services/car.service.js'
-import NavBar from '../../components/Navbar/NavBar.jsx'
+import Navigation from '../../components/Navigation/Navigation.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCurrentPage } from '../../store/filterSlice.js'
 import { BsSearch } from 'react-icons/bs'
@@ -25,7 +25,6 @@ const HomePage = () => {
 			setCars(data)
 			setIsCarsLoading(false)
 		}
-		window.scroll(0, 0)
 		fetchData()
 	}, [currentPage])
 
@@ -36,9 +35,9 @@ const HomePage = () => {
 	}, [searchQuery, cars])
 
 	/*const createNewCar = (newCar) => {
-		setCars([...cars, newCar])
-		setModal(false)
-	}*/
+    setCars([...cars, newCar])
+    setModal(false)
+  }*/
 	const onChangePage = (number) => {
 		dispatch(setCurrentPage(number))
 	}
@@ -46,10 +45,10 @@ const HomePage = () => {
 		<>
 			<div className={styles.container}>
 				{isCarsLoading ? (
-					<Loader />
+					<Spinner />
 				) : (
 					<>
-						<NavBar />
+						<Navigation />
 						<div className={styles.input_wrapper}>
 							<BsSearch size={22} className={styles.search_icon} />
 							<input
@@ -57,7 +56,7 @@ const HomePage = () => {
 								value={searchQuery}
 								onChange={(e) => setSearchQuery(e.target.value)}
 								type="text"
-								placeholder="Search..."
+								placeholder="Search car..."
 							/>
 						</div>
 						{!searchCars.length ? (

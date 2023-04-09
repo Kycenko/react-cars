@@ -1,9 +1,9 @@
 .navBar {
-width: 100%;
+  width: 100%;
   background-color: white;
   padding: 0 100px;
   color: white;
-  height: 55px;
+  height: 50px;
   display: flex;
   position: sticky;
   top: 0;
@@ -34,10 +34,6 @@ width: 100%;
 
   .favourite_wrapper {
     justify-content: flex-end;
-    margin-right: 30px;
-  }
 
-  .cart_wrapper {
-    justify-content: flex-end;
   }
 }

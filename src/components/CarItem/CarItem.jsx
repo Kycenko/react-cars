@@ -3,7 +3,6 @@ import styles from './CarItem.module.scss'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setCurrentCar } from '../../store/carsSlice.js'
-import AddCarInCart from '../AddCarInCart/AddCarInCart.jsx'
 import AddCarInFavorite from '../AddCarInFavorite/AddCarInFavorite.jsx'
 
 const CarItem = ({ car }) => {
@@ -14,30 +13,11 @@ const CarItem = ({ car }) => {
 		navigate(`/car/${car.id}`)
 	}
 	return (
-		<div className={styles.product_item}>
+		<div className={styles.productItem}>
 			{<img onClick={moveToCarItem} src={`${car.image}`} alt="" />}
-
-			<div className={styles.product_list}>
+			<div className={styles.productInfo}>
 				<h3>{car.title}</h3>
-
-				<span className={styles.price}>
-					{new Intl.NumberFormat('ru-RU', {
-						style: 'currency',
-						currency: 'USD'
-					}).format(car.price)}
-				</span>
-				<div className={styles.row}></div>
-				<div className={styles.buttons}>
-					<AddCarInFavorite car={car} />
-					<button className={styles.button} onClick={moveToCarItem}>
-						<img
-							className={styles.icon}
-							src="/public/img/readMoreIcon.svg"
-							alt=""
-						/>
-					</button>
-					<AddCarInCart car={car} />
-				</div>
+				<AddCarInFavorite car={car} />
 			</div>
 		</div>
 	)

@@ -1,4 +1,17 @@
-.cars_in_cart {
+.favourite_block {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.favourite_icon {
+  cursor: pointer;
+  position: relative;
+  color: white;
+  width: 20px;
+  height: 25px;
+}
+.carsInFavourite {
   position: absolute;
   width: 20px;
   height: 20px;
