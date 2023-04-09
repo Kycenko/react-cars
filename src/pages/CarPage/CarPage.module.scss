@@ -3,53 +3,56 @@
   justify-content: center;
 }
 
-.car_content {
 
-}
-
-.car_content_left {
-  width: 50%;
-
-}
-
-.item {
-  border: 2px solid gray;
-  border-radius: 10px;
-}
-
-.image {
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.slideStyle {
   width: 100%;
-  height: 1000px;
-}
-
-
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-h2 {
-  padding: 5px;
-}
-
-p {
-  padding: 5px;
-}
-
-.myLink {
-  color: black;
-  text-decoration: none;
-  background-color: white;
-  padding: 10px;
-  border: 1px solid white;
-  cursor: pointer;
+  height: 100%;
   border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+}
+
+.sliderStyle {
+  height: 100%;
+  position: relative;
+}
+.slideContainer {
+  width: 700px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .slideContainer {
+    width: 500px;
+    height: 400px;
+  }
+}
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 32px;
+  font-size: 45px;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer;
+
+}
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 32px;
+  font-size: 45px;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer
+}
+.dotsContainer {
+  display: flex;
+  color: black;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
 }

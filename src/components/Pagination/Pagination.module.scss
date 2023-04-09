@@ -14,10 +14,26 @@
       cursor: pointer;
       display: inline-block;
       color: black;
+
+      &:active {
+        background-color: black;
+        color: white;
+      }
+
       &:hover {
         background-color: black;
         color: white;
       }
     }
   }
+
+  :global {
+    .selected {
+      a {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+
 }
