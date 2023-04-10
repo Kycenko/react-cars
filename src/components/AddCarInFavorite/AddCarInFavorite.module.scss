@@ -1,13 +1,12 @@
-.buttons {
+.container {
   display: flex;
   justify-content: center;
 }
 
 .icon {
-  display: flex;
   cursor: pointer;
+  width: 20px;
   margin-bottom: 5px;
-  height: 20px;
 }
 
 .icon:hover {

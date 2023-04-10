@@ -3,7 +3,7 @@ import Navigation from '../../components/Navigation/Navigation.jsx'
 import { useSelector } from 'react-redux'
 
 const FavoritePage = () => {
-	const cars = useSelector((state) => state.favourite.carsInFavourite)
+	const cars = useSelector((state) => state.favorite.carsInFavorite)
 	return (
 		<div>
 			<Navigation />

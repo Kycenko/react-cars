@@ -20,7 +20,7 @@ const AddCarInFavorite = ({ cars }) => {
 		}
 	}
 	return (
-		<div className={styles.buttons}>
+		<div className={styles.container}>
 			{isCarInFavorite ? (
 				<img
 					className={styles.icon}
