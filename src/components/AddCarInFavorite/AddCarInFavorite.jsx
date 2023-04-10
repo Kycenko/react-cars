@@ -6,17 +6,17 @@ import {
 } from '../../store/favoriteSlice.js'
 import styles from './AddCarInFavorite.module.scss'
 
-const AddCarInFavorite = ({ car }) => {
+const AddCarInFavorite = ({ cars }) => {
 	const dispatch = useDispatch()
-	const cars = useSelector((state) => state.favorite.carsInFavorite)
-	const isCarInFavorite = cars.some((item) => item.id === car.id)
+	const addCars = useSelector((state) => state.favorite.carsInFavorite)
+	const isCarInFavorite = addCars.some((item) => item.id === cars.id)
 
 	const handleClick = (e) => {
 		e.stopPropagation()
 		if (isCarInFavorite) {
-			dispatch(deleteCarInFavorite(car.id))
+			dispatch(deleteCarInFavorite(cars.id))
 		} else {
-			dispatch(setCarInFavorite(car))
+			dispatch(setCarInFavorite(cars))
 		}
 	}
 	return (
@@ -40,4 +40,4 @@ const AddCarInFavorite = ({ car }) => {
 	)
 }
 
-export default AddCarInFavorite;
+export default AddCarInFavorite

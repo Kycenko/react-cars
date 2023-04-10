@@ -17,7 +17,7 @@ const CarItem = ({ car }) => {
 			{<img onClick={moveToCarItem} src={`${car.image}`} alt="" />}
 			<div className={styles.productInfo}>
 				<h3>{car.title}</h3>
-				<AddCarInFavorite car={car} />
+				<AddCarInFavorite cars={car} />
 			</div>
 		</div>
 	)
