@@ -1,26 +1,22 @@
 import React from 'react'
-import styles from './CarItem.module.scss'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { setCurrentCar } from '../../store/carsSlice.js'
+import { Link } from 'react-router-dom'
 import AddCarInFavorite from '../AddCarInFavorite/AddCarInFavorite.jsx'
+import styles from './CarItem.module.scss'
 
-const CarItem = ({ car }) => {
-	const dispatch = useDispatch()
-	const navigate = useNavigate()
-	const moveToCarItem = () => {
-		dispatch(setCurrentCar(car))
-		navigate(`/car/${car.id}`)
-	}
-	return (
-		<div className={styles.productItem}>
-			{<img onClick={moveToCarItem} src={`${car.image}`} alt="" />}
-			<div className={styles.productInfo}>
-				<h3>{car.title}</h3>
-				<AddCarInFavorite cars={car} />
-			</div>
+const CarItem = ({ data }) => {
+	
+	if (!data.length)
+		return <div className={styles.notFound}>Cars not found!</div>
+	
+	return (<div className={styles.container}>
+			{data?.map(item => <div key={item.id} className={styles.productItem}>
+				<Link to={`/car/${item.id}`}>{<img src={`${item.image}`} alt='' />}</Link>
+				<div className={styles.productInfo}>
+					<h3>{item.title}</h3>
+					<AddCarInFavorite cars={item} />
+				</div>
+			</div>)}
 		</div>
 	)
 }
-
 export default CarItem

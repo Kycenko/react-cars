@@ -1,16 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import carsReducer from './carsSlice.js'
-import favoriteReducer from './favoriteSlice.js'
 
-import filterReducer from './filterSlice.js'
+import favoriteReducer from './favoriteSlice.js'
 import { carsApi } from './carsApi.js'
+import initialCarsReducer from './initialCarsSlice.js'
 
 export const store = configureStore({
 	reducer: {
-		[carsApi.reducerPath]: carsApi.reducer,
-		cars: carsReducer,
+		initialCars: initialCarsReducer,
 		favorite: favoriteReducer,
-		filter: filterReducer
+		[carsApi.reducerPath]: carsApi.reducer
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware().concat(carsApi.middleware)

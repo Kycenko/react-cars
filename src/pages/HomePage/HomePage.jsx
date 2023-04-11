@@ -1,62 +1,39 @@
-import React, { useMemo, useState } from 'react'
-import styles from './HomePage.module.scss'
-import Navigation from '../../components/Navigation/Navigation.jsx'
-import { useDispatch } from 'react-redux'
-import { BsSearch } from 'react-icons/bs'
-import CarsList from '../../components/CarsList/CarsList.jsx'
-import Pagination from '../../components/Pagination/Pagination.jsx'
+import { useDispatch, useSelector } from 'react-redux'
 import { useGetCarsQuery } from '../../store/carsApi.js'
+import { setCurrentPage } from '../../store/initialCarsSlice.js'
+import Navigation from '../../components/Navigation/Navigation.jsx'
+import Pagination from '../../components/Pagination/Pagination.jsx'
 import Spinner from '../../UI/Spinner/Spinner.jsx'
+import Search from '../../components/Search/Search.jsx'
+import CarItem from '../../components/CarItem/CarItem.jsx'
+import Sort from '../../components/Sort/Sort.jsx'
+import styles from './HomePage.module.scss'
 
 const HomePage = () => {
-	const [searchQuery, setSearchQuery] = useState('')
-	const [currentPage, setCurrentPage] = useState(1)
-
-	// const { currentPage } = useSelector((state) => state.filter)
-	const { data: cars = [], error, isLoading } = useGetCarsQuery(currentPage)
 	const dispatch = useDispatch()
-
-	const searchCars = useMemo(() => {
-		return cars.filter((car) =>
-			car.title.toLowerCase().includes(searchQuery.toLowerCase())
-		)
-	}, [searchQuery, cars])
-
-	const onChangePage = (number) => {
-		setCurrentPage(number)
+	const { searchName, currentPage } = useSelector(state => state.initialCars)
+	
+	const body = {
+		page: currentPage,
+		search: searchName
 	}
-	if (isLoading)
-		return (
-			<div>
-				<Spinner />
-			</div>
-		)
+	
+	const { data: cars = [], isLoading } = useGetCarsQuery(body)
+	
+	const onChangePage = (page) => {
+		dispatch(setCurrentPage(page))
+	}
+	
+	if (isLoading) return <Spinner />
+	
 	return (
-		<>
+		<div className={styles.container}>
 			<Navigation />
-			<div className={styles.container}>
-				<div className={styles.input_wrapper}>
-					<BsSearch size={22} className={styles.search_icon} />
-					<input
-						className={styles.search_input}
-						value={searchQuery}
-						onChange={(e) => setSearchQuery(e.target.value)}
-						type="text"
-						placeholder="Search car..."
-					/>
-				</div>
-				<div className={styles.sortBlock}>
-					Сортировка
-					<hr />
-				</div>
-				{!searchCars.length ? (
-					<div className={styles.notFound}>cars not found!</div>
-				) : (
-					<CarsList cars={searchCars} key={cars.id} />
-				)}
-				<Pagination currentPage={currentPage} onChangePage={onChangePage} />
-			</div>
-		</>
+			<Search />
+			<Sort />
+			<CarItem data={cars} key={cars.id} />
+			<Pagination currentPage={currentPage} onChangePage={onChangePage} />
+		</div>
 	)
 }
 

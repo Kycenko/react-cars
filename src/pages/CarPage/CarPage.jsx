@@ -43,7 +43,6 @@ const CarPage = () => {
 	return (
 		<>
 			<Navigation />
-
 			<div className={styles.slideContainer}>
 				<div className={styles.sliderStyle}>
 					<div onClick={prevSlide} className={styles.leftArrow}>

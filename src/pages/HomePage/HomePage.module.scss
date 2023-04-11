@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
 
+
+
   .input_wrapper {
     margin-bottom: 20px;
     width: 400px;
@@ -30,18 +32,6 @@
 
     input::placeholder {
       opacity: 0.8
-    }
-  }
-  .sortBlock {
-    width: 850px;
-    color: black;
-
-  }
-  @media (max-width: 650px) {
-
-    .sortBlock
-    {
-      width: 650px;
     }
   }
 

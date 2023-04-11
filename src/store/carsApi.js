@@ -5,8 +5,13 @@ export const carsApi = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4200/' }),
 	endpoints: (build) => ({
 		getCars: build.query({
-			query: (currentPage) => `cars?_page=${currentPage}&_limit=6`
+			query: (body) =>
+				body.search === ''
+					? `cars?_page=${body.page}&_limit=6`
+					: `cars?title_like=${body.search}`
 		})
+		
 	})
 })
-export const {useGetCarsQuery} = carsApi
+
+export const { useGetCarsQuery, useGetCarsFilteredByNameQuery } = carsApi
