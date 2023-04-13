@@ -1,15 +1,17 @@
 .container {
   display: flex;
   justify-content: center;
+
 }
 
 .icon {
   cursor: pointer;
-  width: 20px;
-  margin-bottom: 5px;
+  width: 24px;
+  margin-bottom: 10px;
 }
 
 .icon:hover {
   transform: scale(1.1);
   transition: 0.3s;
+
 }

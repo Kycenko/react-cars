@@ -9,7 +9,7 @@ const favoriteSlice = createSlice({
 		setCarInFavorite: (state, action) => {
 			state.carsInFavorite.push(action.payload)
 		},
-		deleteCarInFavorite: (state, action) => {
+		removeCarInFavorite: (state, action) => {
 			state.carsInFavorite = state.carsInFavorite.filter(
 				(car) => car.id !== action.payload
 			)
@@ -17,6 +17,6 @@ const favoriteSlice = createSlice({
 	}
 })
 
-export const { setCarInFavorite, deleteCarInFavorite } =
+export const { setCarInFavorite, removeCarInFavorite } =
 	favoriteSlice.actions
 export default favoriteSlice.reducer

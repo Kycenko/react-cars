@@ -11,7 +11,7 @@ const Category = () => {
 	
 	const { data = [], isLoading } = useGetCategoryQuery()
 	
-	const handleChange = (e) => {
+	const handleCategoryChange = (e) => {
 		dispatch(setCategory(e.target.value))
 		setCategories(e.target.value)
 	}
@@ -20,10 +20,8 @@ const Category = () => {
 	
 	return (
 		<div className={styles.container}>
-			<select className={styles.optionBlock} onChange={handleChange} name='category' id=''>
-				{data?.map(category => {
-					return (<option key={category.id} value={category.name}>{category.visibleName}</option>)
-				})}
+			<select className={styles.optionBlock} onChange={handleCategoryChange} name='category' id=''>
+				{data?.map(category => <option key={category.id} value={category.name}>{category.visibleName}</option>)}
 			</select>
 			{categories.length > 0 ? categories : 'All cars'}
 			<hr />
