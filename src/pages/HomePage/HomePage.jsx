@@ -6,16 +6,17 @@ import Pagination from '../../components/Pagination/Pagination.jsx'
 import Spinner from '../../UI/Spinner/Spinner.jsx'
 import Search from '../../components/Search/Search.jsx'
 import CarItem from '../../components/CarItem/CarItem.jsx'
-import Sort from '../../components/Sort/Sort.jsx'
+import Category from '../../components/Category/Category.jsx'
 import styles from './HomePage.module.scss'
 
 const HomePage = () => {
 	const dispatch = useDispatch()
-	const { searchName, currentPage } = useSelector(state => state.initialCars)
+	const { searchName, currentPage, category } = useSelector(state => state.initialCars)
 	
 	const body = {
 		page: currentPage,
-		search: searchName
+		search: searchName,
+		category: category
 	}
 	
 	const { data: cars = [], isLoading } = useGetCarsQuery(body)
@@ -30,7 +31,7 @@ const HomePage = () => {
 		<div className={styles.container}>
 			<Navigation />
 			<Search />
-			<Sort />
+			<Category />
 			<CarItem data={cars} key={cars.id} />
 			<Pagination currentPage={currentPage} onChangePage={onChangePage} />
 		</div>

@@ -31,7 +31,15 @@ h3 {
   font-size: 15px;
   font-weight: 400;
   color: #444444;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
+}
+
+p {
+  display: flex;
+  font-size: 13px;
+  color: #444444;
+  margin: 0 0 10px 10px;
+  opacity: 0.5;
 }
 
 .notFound {

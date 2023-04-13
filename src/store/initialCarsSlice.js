@@ -11,6 +11,9 @@ const initialCarsSlice = createSlice({
 		setCurrentPage: (state,action) => {
 			state.currentPage = action.payload
 		},
+		setCategory: (state, action) => {
+			state.category = action.payload
+		},
 		setSearchName: (state, action) => {
 			state.searchName = action.payload
 		}
@@ -19,5 +22,5 @@ const initialCarsSlice = createSlice({
 	
 })
 
-export const {setSearchName, setCurrentPage} = initialCarsSlice.actions
+export const {setSearchName, setCurrentPage, setCategory} = initialCarsSlice.actions
 export default initialCarsSlice.reducer

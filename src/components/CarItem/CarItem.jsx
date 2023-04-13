@@ -9,11 +9,12 @@ const CarItem = ({ data }) => {
 		return <div className={styles.notFound}>Cars not found!</div>
 	
 	return (<div className={styles.container}>
-			{data?.map(item => <div key={item.id} className={styles.productItem}>
-				<Link to={`/car/${item.id}`}>{<img src={`${item.image}`} alt='' />}</Link>
+			{data?.map(car => <div key={car.id} className={styles.productItem}>
+				<Link to={`/car/${car.id}`}>{<img src={`${car.image}`} alt={car.title} />}</Link>
 				<div className={styles.productInfo}>
-					<h3>{item.title}</h3>
-					<AddCarInFavorite cars={item} />
+					<h3>{car.title}</h3>
+					<p>{car.category}</p>
+					<AddCarInFavorite cars={car} />
 				</div>
 			</div>)}
 		</div>

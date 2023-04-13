@@ -7,11 +7,13 @@ export const carsApi = createApi({
 		getCars: build.query({
 			query: (body) =>
 				body.search === ''
-					? `cars?_page=${body.page}&_limit=6`
-					: `cars?title_like=${body.search}`
+					? `cars?category_like=${body.category}&_page=${body.page}&_limit=6`
+					: `cars?title_like=${body.search}&_limit=6`
+		}),
+		getCategory: build.query({
+			query: () => 'categories'
 		})
-		
 	})
 })
 
-export const { useGetCarsQuery, useGetCarsFilteredByNameQuery } = carsApi
+export const { useGetCarsQuery, useGetCategoryQuery } = carsApi
