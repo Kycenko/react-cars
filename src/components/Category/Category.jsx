@@ -24,7 +24,7 @@ const Category = () => {
 				{data?.map(category => <option key={category.id} value={category.name}>{category.visibleName}</option>)}
 			</select>
 			{categories.length > 0 ? categories : 'All cars'}
-			<hr />
+
 		</div>
 	)
 }

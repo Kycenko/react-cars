@@ -3,9 +3,20 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 900px;
+  width: 1000px;
+  margin: 0 auto;
 }
 
+@media (max-width: 1000px) {
+  .container {
+    width: 768px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 480px;
+  }
+}
 .productItem {
   box-shadow: 0 1px 3px 2px rgba(0, 0, 0, .2);
   border-radius: 6px;

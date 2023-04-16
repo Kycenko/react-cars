@@ -12,26 +12,26 @@ import styles from './HomePage.module.scss'
 const HomePage = () => {
 	const dispatch = useDispatch()
 	const { searchName, currentPage, category } = useSelector(state => state.initialCars)
-	
+
 	const body = {
 		page: currentPage,
 		search: searchName,
 		category: category
 	}
-	
+
 	const { data: cars = [], isLoading } = useGetCarsQuery(body)
-	
+
 	const onChangePage = (page) => {
 		dispatch(setCurrentPage(page))
 	}
-	
+
 	if (isLoading) return <Spinner />
-	
+
 	return (
 		<div className={styles.container}>
 			<Navigation />
 			<Search />
-			<Category />
+			<div className={styles.category}><Category /></div>
 			<CarItem data={cars} key={cars.id} />
 			<Pagination currentPage={currentPage} onChangePage={onChangePage} />
 		</div>
